@@ -7,12 +7,14 @@ provider "azurerm" {
 }
 
 # Configure state file
+terraform {
   backend "azurerm" {
-    resource_group_name  = $groupName
-    storage_account_name = $storageAccountName
-    container_name       = $blobContainerName
+    resource_group_name  = "cloud-shell-storage-northeurope"
+    storage_account_name = "storagetest1account"
+    container_name       = "testblobcontainer"
     key                  = "terraformStateFileName.tfstate"
   }
+}
 
 
 # Create  resources:
