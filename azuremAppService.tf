@@ -23,22 +23,3 @@ resource "azurerm_resource_group" "testGroup" {
   name     = "terraform-test-group"
   location = "West Europe"
 }
-
-resource "azurerm_app_service_plan" "servicePlan" {
-  name                = "terraformServicePlan"
-  location            = azurerm_resource_group.testGroup.location
-  resource_group_name = azurerm_resource_group.testGroup.name
-
-  sku {
-    tier = "Free"
-    size = "F1"
-  }
-}
-
-resource "azurerm_app_service" "appService" {
-  name                = "terraformAppService"
-  location            = azurerm_resource_group.testGroup.location
-  resource_group_name = azurerm_resource_group.testGroup.name
-  app_service_plan_id = azurerm_app_service_plan.servicePlan.id
-
-}
