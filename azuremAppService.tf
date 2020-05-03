@@ -32,13 +32,13 @@ resource "azurerm_app_service_plan" "servicePlan" {
   resource_group_name = azurerm_resource_group.testGroup.name
 
   sku {
-    tier = "Shared"
-    size = "D1"
+    tier = "Free"
+    size = "F1"
   }
 }
 
 resource "azurerm_app_service" "appService" {
-  name                = "terraformAppService"
+  name                = "terraform-appservice-kmusiuk"
   location            = azurerm_resource_group.testGroup.location
   resource_group_name = azurerm_resource_group.testGroup.name
   app_service_plan_id = azurerm_app_service_plan.servicePlan.id
