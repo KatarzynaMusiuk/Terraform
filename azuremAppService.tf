@@ -43,13 +43,5 @@ resource "azurerm_app_service" "appService" {
   resource_group_name = azurerm_resource_group.testGroup.name
   app_service_plan_id = azurerm_app_service_plan.servicePlan.id
 
-  site_config {
-    scm_type = "ExternalGit"
-  }
-
-  source_control {
-    repo_url = "https://github.com/Azure-Samples/app-service-web-html-get-started"
-    branch   = "master"  
-  }
   
 }
