@@ -21,7 +21,7 @@ terraform {
 
 resource "azurerm_resource_group" "testGroup" {
   name     = "terraform-test-group"
-  location = "West Europe"
+  location = "Central US"
 }
 
 
