@@ -1,0 +1,4 @@
+# Visual Studio directories
+.vs/
+bin/
+obj/
