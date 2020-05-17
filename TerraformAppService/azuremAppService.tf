@@ -49,8 +49,8 @@ resource "azurerm_app_service_plan" "servicePlan" {
   resource_group_name = azurerm_resource_group.testGroup.name
 
   sku {
-    tier = "Free"
-    size = "F1"
+    tier = "Standard"
+    size = "S1"
   }
 }
 
