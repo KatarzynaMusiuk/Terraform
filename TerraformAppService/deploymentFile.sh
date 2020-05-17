@@ -1,6 +1,6 @@
 #!/bin/bash
 cd ../HelloWorldDotNetCore
-az login --service-principal -u APP_URL -p ARM_CLIENT_SECRET --tenant ARM_TENANT_ID
+az login --service-principal -u $APP_URL -p $ARM_CLIENT_SECRET --tenant $ARM_TENANT_ID
 #the following line migth be redundant
 az webapp deployment user set --user-name GIT_USER_NAME --password GIT_PASSWORD
 url=`az webapp deployment list-publishing-credentials --name "terraform-appservice-kmusiuk" --resource-group "terraform-test-group" --query scmUri --output tsv`
