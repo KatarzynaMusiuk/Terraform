@@ -65,8 +65,6 @@ resource "azurerm_app_service" "appService" {
   }
   
   provisioner "local-exec" {
-    command = "./deploymentFile.sh"
+    command = "bash deploymentFile.sh"
   }
-
-  
 }
