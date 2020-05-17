@@ -1,14 +1,5 @@
 #variables
 
-variable "state_file_group_name" {
-  type = string
-}
-variable "state_file_storage_name" {
-  type = string
-}
-variable "state_file_container_name" {
-  type = string
-}
 variable "resource_group_name" {
   type = string
 }
@@ -35,9 +26,9 @@ provider "azurerm" {
 # Configure state file
 terraform {
   backend "azurerm" {
-    resource_group_name  = var.state_file_group_name       
-    storage_account_name = var.state_file_storage_name     
-    container_name       = var.state_file_container_name  
+    resource_group_name  = "cloud-shell-storage-northeurope"      
+    storage_account_name = "storagetest1account"     
+    container_name       = "testblobcontainer"  
     key                  = "terraformStateFileName.tfstate"
   }
 }
